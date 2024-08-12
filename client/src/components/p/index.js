@@ -1,10 +1,13 @@
-import Paragraph from "./style";
+// Imports Local
+    import Paragraph from "./style";
 
-const P = ({text, alignment, color}) =>
-{         
-    return(
-        <Paragraph alignment={alignment} color={color}>{text}</Paragraph>
-    )
-}
+// Element
+    const P = ({text, alignment, color, size}) =>
+    {         
+        return(
+            <Paragraph alignment={alignment} color={color} size={size}>{text}</Paragraph>
+        )
+    }
     
+// Export of the element
     export default P;

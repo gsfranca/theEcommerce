@@ -1,63 +1,66 @@
 /*---------------------TO-DO---------------------
-- Fix Navbar body color, class is not working.
 - Add all links to Navbar.
-- Create login button (component).
-- Create logged in button.
 -----------------------------------------------*/
 
-/*Bootstrap*/
+// Imports Bootstrap
 
     import Container from 'react-bootstrap/Container';
     import Nav from 'react-bootstrap/Nav';
     import Navbar from 'react-bootstrap/Navbar';
     import Offcanvas from 'react-bootstrap/Offcanvas';
 
-/*Local*/
+// Imports Local
     import LOGO from "../../styles/img/logo.png"
-    import Navbar_The_Ecommerce from './style';
+    import {LogoNavbarStyle, LogoOffcanvasStyle, MenuButtonStyle, NavbarStyle, OffcanvasStyle, DivRight} from './style';
+    import Button from '../button';
+    
+// Element}
+    function NavBar({fontSize, color, backgroundColor}) 
+    {
+        return (
+            /*Navbar*/
+                <NavbarStyle key={false} expand={false} fixed="top" variant='dark' backgroundColor={backgroundColor}>
 
+                    {/*Container Navbar*/}
+                        <Container fluid>
 
-function NavBar() 
-{
-    return (
-        /*Navbar*/
-            <Navbar_The_Ecommerce key={false} expand={false} fixed="top" variant='dark'>
+                            {/*Logo*/}
+                                <Navbar.Brand href="#"><LogoNavbarStyle src={LOGO} alt='Logo The Ecommerce' /></Navbar.Brand>
 
-                {/*Container Navbar*/}
-                    <Container fluid>
+                            {/*Menu Button*/}
+                                <DivRight>
+                                    <Button text="Button" username="Pomba" buttonName="btn-userLoggedIn"/>
+                                    <Button text="Log In" buttonName="btn-line"/>
+                                    <MenuButtonStyle />
+                                </DivRight>
+                                
 
-                        {/*Logo*/}
-                            <Navbar.Brand href="#"><img src={LOGO} className="logo" /></Navbar.Brand>
+                            {/*Navbar Body*/}
+                                <OffcanvasStyle placement="end" backgroundColor={backgroundColor} fontSize={fontSize} color={color}>
 
-                        {/*Menu Button*/}
-                            <Navbar.Toggle className='toogle'/>
+                                    {/*Header*/}
+                                        <Offcanvas.Header closeButton>
+                                            <LogoOffcanvasStyle src={LOGO} alt='Logo The Ecommerce' />
+                                        </Offcanvas.Header>
+                                    {/*End of Header*/}
 
-                        {/*Navbar Body*/}
-                            <Navbar.Offcanvas placement="end">
+                                    {/*Body*/}
+                                        <Offcanvas.Body>
+                                            <Nav className="justify-content-end flex-grow-1 pe-3">
+                                                <Nav.Link href="#action1">Home</Nav.Link>
+                                            </Nav>
+                                        </Offcanvas.Body>
+                                    {/*End of Body*/}
+                                        
+                                </OffcanvasStyle>
+                            {/*End of Navbar Body*/}
 
-                                {/*Header*/}
-                                    <Offcanvas.Header closeButton>
-                                        <Offcanvas.Title>TheEcommerce</Offcanvas.Title>
-                                    </Offcanvas.Header>
-                                {/*End of Header*/}
+                        </Container>
+                    {/*Container Navbar*/}
 
-                                {/*Body*/}
-                                    <Offcanvas.Body>
-                                        <Nav className="justify-content-end flex-grow-1 pe-3">
-                                            <Nav.Link href="#action1">Home</Nav.Link>
-                                        </Nav>
-                                    </Offcanvas.Body>
-                                {/*End of Body*/}
-                                    
-                            </Navbar.Offcanvas>
-                        {/*End of Navbar Body*/}
-
-                    </Container>
-                {/*Container Navbar*/}
-
-            </Navbar_The_Ecommerce>
-        /*End of Navbar*/
-      );
-}
-
-export default NavBar;
+                </NavbarStyle>
+            /*End of Navbar*/
+        );
+    }
+// Export of the element
+    export default NavBar;

@@ -1,9 +1,17 @@
-import styled from "styled-components"
+// Imports
+    import styled from "styled-components"
 
-const Paragraph = styled.p`
-        font-size:  ${(props) => props.fontSize || '1.125em'} ;
-        text-align: ${(props) => props.alignment || 'left'};
-        color: ${(props) => (props.color || 'black')};
-    `
+// Imports Local
+    import { fontColor, fontSize, textAlign } from "../../utilities/style-utilities"
 
-export default Paragraph
+// Element Style
+    const Paragraph = styled.p`
+
+        /*Text*/
+            font-size:  ${fontSize('1.125rem')} ;
+            text-align: ${textAlign('left')};
+            color: ${fontColor('black')};
+        `
+
+// Export Style
+    export default Paragraph

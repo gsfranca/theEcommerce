@@ -26,3 +26,4 @@ client/yarn-error.log*
 
 # dependencies
 api/node_modules
+api/config/serviceAccountKey.json

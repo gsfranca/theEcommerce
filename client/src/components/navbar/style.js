@@ -1,38 +1,75 @@
-import styled from "styled-components"
-import Navbar from 'react-bootstrap/Navbar';
+// Imports
+    import styled from "styled-components"
+    import Navbar from 'react-bootstrap/Navbar'; 
 
-import { COLORS } from "../../styles/css/global";
+// Imports Local
+    import { COLORS } from "../../styles/css/global";
+    import { backgroundColor, fontColor, fontSize } from "../../utilities/style-utilities";
 
-const Navbar_The_Ecommerce = styled(Navbar)`
+// Elements style
 
-    /*Navbar*/
+    // Navbar
+        const NavbarStyle = styled(Navbar)`
 
-        /*Background*/
-            background-color: ${COLORS.DEFAULT_COLOR_2};
+            /*Background*/
+                background-color: ${backgroundColor(COLORS.DEFAULT_COLOR_2)};
 
-        /*Size*/
-            padding: 0.5em;
+            /*Size*/
+                padding: 0.5em;
 
-    /*End of Navbar*/
-    .logo
-    {
-        /*Size*/
-            width: 5em;
+            
+        `
 
-        /*Position*/
-            margin-left: 0.4em;
-    }
+    // Navbar Logo
+        const LogoNavbarStyle = styled.img`
+        
+            /*Size*/
+                width: 6.75em;
 
-    .me-auto
-    {
-        font-size: 1rem;
-    }
+            /*Position*/
+                margin-left: 0.4em;
+        `
 
-    .toogle
-    {
-        border: 0;
-    }
-`
+    // Toogle to open menu
+        const MenuButtonStyle = styled(Navbar.Toggle)`
 
+            /*Border*/
+                border: 0;
+        `
+          
+    // Offcanvas (Menu)
+        const OffcanvasStyle = styled(Navbar.Offcanvas)`
 
-export default Navbar_The_Ecommerce
+            /*Background*/
+                background-color: ${backgroundColor(COLORS.DEFAULT_COLOR_2)};
+
+            /*Text*/
+                color: ${fontColor("white")};
+                font-size: ${fontSize('1.125rem')};
+
+            /*Size*/
+                padding: 0.5em;
+
+            // Close Button (Bootstrap)
+                .btn-close
+                {
+                    filter: invert(1);
+                    
+                }
+        `
+
+        // Logo inside navbar
+            const LogoOffcanvasStyle = styled.img`
+                /*Size*/
+                    width: 7em;
+            `
+
+        // Div Menu button and Logged In
+            const DivRight = styled.div`
+                display: inline-flex;
+                align-items: center;
+                gap: 1em;
+            `
+
+// Export Syle
+    export  {NavbarStyle, OffcanvasStyle, LogoNavbarStyle, MenuButtonStyle, LogoOffcanvasStyle, DivRight}

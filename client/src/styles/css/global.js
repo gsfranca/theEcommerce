@@ -1,8 +1,11 @@
 
+// Imports
     import { createGlobalStyle } from "styled-components"
-    import DOODLES from "../img/doodles.png";
     import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Imports Local
+    import DOODLES from "../img/doodles.png";
+    
 // Global Style Vars
     const DEFAULT_FONT = "'Roboto', sans-serif"
 
@@ -40,7 +43,8 @@
                     box-sizing: border-box;
 
                 /*Background*/
-                    background-color: ${COLORS.LIGHT_GRAY};
+                    /* background-color: ${COLORS.LIGHT_GRAY}; */
+                    background-color: pink;
                     background-image: url(${DOODLES});  
                     background-repeat: repeat;
                     background-size: 18vw;

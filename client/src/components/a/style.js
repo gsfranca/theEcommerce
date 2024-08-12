@@ -1,9 +1,17 @@
-import styled from "styled-components"
-import { COLORS } from "../../styles/css/global";
-const Ahref = styled.a`
-     font-size:  ${(props) => props.fontSize || '1.125em'} ;
-     color: ${(props) => (props.color || COLORS.DEFAULT_COLOR_1)};
-       
-    `
+// Imports
+    import styled from "styled-components"
+    
+// Imports Local
+    import { COLORS } from "../../styles/css/global";
+    import { fontColor, fontSize, textAlign } from "../../utilities/style-utilities";
 
-export default Ahref
+// Element style
+    const Ahref = styled.a`
+
+        /*Text*/
+            font-size:  ${fontSize('1.125rem')} ;
+            color:      ${fontColor(COLORS.DEFAULT_COLOR_1)};
+            text-align: ${textAlign('left')};
+    `
+// Export Syle
+    export default Ahref
